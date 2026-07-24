@@ -22,12 +22,20 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from dotenv import load_dotenv
-from graphrag_sdk import (
-    ConnectionConfig,
-    GraphRAG,
-    LiteLLM,
-    LiteLLMEmbedder,
-)
+try:
+    from graphrag_sdk import (
+        ConnectionConfig,
+        GraphRAG,
+        LiteLLM,
+        LiteLLMEmbedder,
+    )
+    HAS_GRAPHRAG_SDK = True
+except ImportError:
+    HAS_GRAPHRAG_SDK = False
+    ConnectionConfig = Any
+    GraphRAG = Any
+    LiteLLM = Any
+    LiteLLMEmbedder = Any
 
 from app.services.database.graph_builder import (
     GRAPH_PREFIX,
@@ -177,6 +185,8 @@ class GraphRAGEngine:
 
     async def _get_or_create(self, year: int) -> GraphRAG:
         """Lazy-init GraphRAG instance untuk satu tahun (cached)."""
+        if not HAS_GRAPHRAG_SDK:
+            raise RuntimeError("graphrag_sdk tidak terinstall (running in lightweight serverless mode).")
         if not await self._ensure_available():
             raise ConnectionError(
                 f"FalkorDB tidak tersedia di {self._host}:{self._port}"
