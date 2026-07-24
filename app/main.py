@@ -126,24 +126,33 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
 
-    frontend_url = os.getenv("FRONTEND_URL", "").strip()
-    origins = [
-        "http://localhost:3000",
-        "http://localhost:5173",
-        "http://localhost:8000",
-        "https://stockgraph-nadya.vercel.app",
-    ]
-    if frontend_url and frontend_url not in origins:
-        origins.append(frontend_url)
+    @app.middleware("http")
+    async def cors_middleware(request: Request, call_next):
+        origin = request.headers.get("origin")
+        if request.method == "OPTIONS":
+            response = JSONResponse(content="OK", status_code=200)
+            if origin:
+                response.headers["Access-Control-Allow-Origin"] = origin
+                response.headers["Access-Control-Allow-Credentials"] = "true"
+                response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+                response.headers["Access-Control-Allow-Headers"] = "Authorization, Content-Type, Accept, Origin, User-Agent, X-Requested-With"
+            return response
 
-    app.add_middleware(
-        CORSMiddleware,
-        allow_origins=origins,
-        allow_origin_regex=r"https://.*\.vercel\.app",
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
+        try:
+            response = await call_next(request)
+        except Exception as exc:
+            logger.error("Unhandled request exception: %s", exc)
+            response = JSONResponse(
+                content={"success": False, "message": str(exc), "code": "INTERNAL_SERVER_ERROR"},
+                status_code=500,
+            )
+
+        if origin:
+            response.headers["Access-Control-Allow-Origin"] = origin
+            response.headers["Access-Control-Allow-Credentials"] = "true"
+            response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+            response.headers["Access-Control-Allow-Headers"] = "Authorization, Content-Type, Accept, Origin, User-Agent, X-Requested-With"
+        return response
 
     api_prefix = "/api/v1"
     app.include_router(users.router, prefix=api_prefix)
