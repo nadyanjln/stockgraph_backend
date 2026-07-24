@@ -74,37 +74,51 @@ def graph_name_for_year(year: int) -> str:
 
 
 def _registry() -> dict:
-    if not REGISTRY_PATH.exists():
-        return {"years": []}
-    try:
-        return json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return {"years": []}
+    for path in [REGISTRY_PATH, Path("/tmp") / REGISTRY_PATH.name]:
+        if path.exists():
+            try:
+                return json.loads(path.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
+                pass
+    return {"years": []}
 
 
 def _save_registry(data: dict) -> None:
-    REGISTRY_PATH.write_text(json.dumps(data, indent=2, sort_keys=True), encoding="utf-8")
+    try:
+        REGISTRY_PATH.write_text(json.dumps(data, indent=2, sort_keys=True), encoding="utf-8")
+    except OSError:
+        try:
+            (Path("/tmp") / REGISTRY_PATH.name).write_text(
+                json.dumps(data, indent=2, sort_keys=True), encoding="utf-8"
+            )
+        except OSError as exc:
+            logger.warning("Could not save registry to /tmp (%s)", exc)
 
 
 def _provenance_registry() -> dict:
-    if not PROVENANCE_PATH.exists():
-        return {"articles": {}, "nodes": {}, "edges": {}}
-    try:
-        data = json.loads(PROVENANCE_PATH.read_text(encoding="utf-8"))
-        return {
-            "articles": data.get("articles", {}),
-            "nodes": data.get("nodes", {}),
-            "edges": data.get("edges", {}),
-        }
-    except (json.JSONDecodeError, OSError):
-        return {"articles": {}, "nodes": {}, "edges": {}}
+    for path in [PROVENANCE_PATH, Path("/tmp") / PROVENANCE_PATH.name]:
+        if path.exists():
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+                return {
+                    "articles": data.get("articles", {}),
+                    "nodes": data.get("nodes", {}),
+                    "edges": data.get("edges", {}),
+                }
+            except (json.JSONDecodeError, OSError):
+                pass
+    return {"articles": {}, "nodes": {}, "edges": {}}
 
 
 def _save_provenance_registry(data: dict) -> None:
-    PROVENANCE_PATH.write_text(
-        json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False),
-        encoding="utf-8",
-    )
+    content = json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False)
+    try:
+        PROVENANCE_PATH.write_text(content, encoding="utf-8")
+    except OSError:
+        try:
+            (Path("/tmp") / PROVENANCE_PATH.name).write_text(content, encoding="utf-8")
+        except OSError as exc:
+            logger.warning("Could not save provenance registry to /tmp (%s)", exc)
 
 
 def _stable_id(prefix: str, value: str) -> str:

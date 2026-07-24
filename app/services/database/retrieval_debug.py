@@ -98,18 +98,31 @@ def build_answer_support(
 
 
 def export_question_debug(payload: dict[str, Any]) -> Path:
-    """Write one JSON file per question under evaluation/debug."""
-    DEBUG_DIR.mkdir(parents=True, exist_ok=True)
-    path = _next_debug_path(DEBUG_DIR)
+    """Write one JSON file per question under evaluation/debug (with /tmp fallback)."""
     enriched = {
         "created_at": datetime.now(timezone.utc).isoformat(),
         **payload,
     }
-    path.write_text(
-        json.dumps(enriched, indent=2, ensure_ascii=False, default=str),
-        encoding="utf-8",
-    )
-    return path
+    try:
+        DEBUG_DIR.mkdir(parents=True, exist_ok=True)
+        path = _next_debug_path(DEBUG_DIR)
+        path.write_text(
+            json.dumps(enriched, indent=2, ensure_ascii=False, default=str),
+            encoding="utf-8",
+        )
+        return path
+    except OSError:
+        try:
+            tmp_dir = Path("/tmp/evaluation/debug")
+            tmp_dir.mkdir(parents=True, exist_ok=True)
+            path = _next_debug_path(tmp_dir)
+            path.write_text(
+                json.dumps(enriched, indent=2, ensure_ascii=False, default=str),
+                encoding="utf-8",
+            )
+            return path
+        except OSError:
+            return Path("/tmp/debug.json")
 
 
 def build_debug_payload(
