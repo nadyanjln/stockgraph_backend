@@ -335,12 +335,24 @@ def _sync_registry_years(years: Iterable[int]) -> None:
     _save_registry({"years": sorted({int(year) for year in years if int(year) > 0})})
 
 
-def list_year_graphs(host: str | None = None, port: int | None = None) -> list[int]:
+def list_year_graphs(
+    host: str | None = None,
+    port: int | None = None,
+    password: str | None = None,
+    username: str | None = None,
+) -> list[int]:
     """Return physically non-empty year graphs, not registry placeholders."""
     graph_host = host or os.getenv("FALKORDB_HOST", "localhost")
     graph_port = port or int(os.getenv("FALKORDB_PORT", "6379"))
+    graph_password = password or os.getenv("FALKORDB_PASSWORD") or None
+    graph_username = username or os.getenv("FALKORDB_USERNAME") or None
     try:
-        client = FalkorDB(host=graph_host, port=graph_port)
+        kw: dict[str, Any] = {"host": graph_host, "port": graph_port}
+        if graph_password:
+            kw["password"] = graph_password
+        if graph_username:
+            kw["username"] = graph_username
+        client = FalkorDB(**kw)
         years: list[int] = []
         for name in client.list_graphs():
             if not name.startswith(f"{GRAPH_PREFIX}_"):
@@ -688,12 +700,25 @@ def build_financial_graph(
     return build_graph_multi_tenant({}, {}, financial_data, True, host, port)
 
 
-def validate_graph(year: int, host: str | None = None, port: int | None = None) -> dict:
+def validate_graph(
+    year: int,
+    host: str | None = None,
+    port: int | None = None,
+    password: str | None = None,
+    username: str | None = None,
+) -> dict:
     graph_host = host or os.getenv("FALKORDB_HOST", "localhost")
     graph_port = port or int(os.getenv("FALKORDB_PORT", "6379"))
+    graph_password = password or os.getenv("FALKORDB_PASSWORD") or None
+    graph_username = username or os.getenv("FALKORDB_USERNAME") or None
     graph_name = graph_name_for_year(year)
     try:
-        client = FalkorDB(host=graph_host, port=graph_port)
+        kw: dict[str, Any] = {"host": graph_host, "port": graph_port}
+        if graph_password:
+            kw["password"] = graph_password
+        if graph_username:
+            kw["username"] = graph_username
+        client = FalkorDB(**kw)
         names = set(client.list_graphs())
         if graph_name not in names:
             return {

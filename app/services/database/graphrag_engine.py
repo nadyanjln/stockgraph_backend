@@ -78,12 +78,16 @@ class GraphRAGEngine:
         self,
         host: str | None = None,
         port: int | None = None,
+        password: str | None = None,
+        username: str | None = None,
         llm_model: str = "openai/gpt-4o-mini",
         embedder_model: str = "openai/text-embedding-3-small",
         embedder_dim: int = 256,
     ):
         self._host = host or os.getenv("FALKORDB_HOST", "localhost")
         self._port = port or int(os.getenv("FALKORDB_PORT", 6379))
+        self._password = password or os.getenv("FALKORDB_PASSWORD") or None
+        self._username = username or os.getenv("FALKORDB_USERNAME") or None
         self._llm_model = llm_model
         self._embedder_model = embedder_model
         self._embedder_dim = embedder_dim
@@ -180,12 +184,18 @@ class GraphRAGEngine:
         if year in self._instances:
             return self._instances[year]
 
+        conn_kwargs: dict[str, Any] = {
+            "host": self._host,
+            "port": self._port,
+            "graph_name": graph_name_for_year(year),
+        }
+        if self._password:
+            conn_kwargs["password"] = self._password
+        if self._username:
+            conn_kwargs["username"] = self._username
+
         kwargs = {
-            "connection": ConnectionConfig(
-                host=self._host,
-                port=self._port,
-                graph_name=graph_name_for_year(year),
-            ),
+            "connection": ConnectionConfig(**conn_kwargs),
             "llm": LiteLLM(model=self._llm_model),
             "embedder": LiteLLMEmbedder(
                 model=self._embedder_model, dimensions=self._embedder_dim,
