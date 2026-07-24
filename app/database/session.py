@@ -2,7 +2,23 @@
 
 from __future__ import annotations
 
+import socket
 from collections.abc import AsyncGenerator
+
+# Ensure asyncpg/uvloop on Vercel AWS Lambda defaults to IPv4 socket binding (prevents OSError 99)
+_orig_getaddrinfo = socket.getaddrinfo
+
+def _ipv4_preferred_getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+    if family in (0, socket.AF_UNSPEC):
+        try:
+            res = _orig_getaddrinfo(host, port, socket.AF_INET, type, proto, flags)
+            if res:
+                return res
+        except Exception:
+            pass
+    return _orig_getaddrinfo(host, port, family, type, proto, flags)
+
+socket.getaddrinfo = _ipv4_preferred_getaddrinfo
 
 from sqlalchemy.ext.asyncio import (
     AsyncSession,
