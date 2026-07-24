@@ -28,6 +28,9 @@ venv/
 ENV/
 env/
 
+# Vercel
+.vercel/
+
 # Environment variables
 .env
 .env.local
