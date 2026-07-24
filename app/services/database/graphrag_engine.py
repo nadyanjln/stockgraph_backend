@@ -162,6 +162,11 @@ class GraphRAGEngine:
             return False, str(exc)
 
     async def _ensure_available(self, force: bool = False) -> bool:
+        if not HAS_GRAPHRAG_SDK:
+            self._is_available = False
+            self._connection_error = "graphrag_sdk tidak terinstall (running in lightweight serverless mode)."
+            return False
+
         now = time.monotonic()
         if (
             not force
@@ -248,6 +253,9 @@ class GraphRAGEngine:
     ) -> GraphStats:
         """Ingest prepared domain documents using GraphRAG-SDK ``rag.ingest``."""
         stats = GraphStats(graph_name=graph_name_for_year(year))
+        if not HAS_GRAPHRAG_SDK:
+            stats.error_messages.append("graphrag_sdk tidak terinstall (running in lightweight serverless mode).")
+            return stats
         if not await self._ensure_available():
             stats.errors = 1
             stats.error_messages.append(
