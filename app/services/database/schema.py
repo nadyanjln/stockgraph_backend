@@ -12,16 +12,24 @@ Dipakai oleh:
 
 from __future__ import annotations
 
-from graphrag_sdk import EntityType, GraphSchema, RelationType
+from typing import Any
+
+try:
+    from graphrag_sdk import EntityType, GraphSchema, RelationType
+    HAS_GRAPHRAG_SDK = True
+except ImportError:
+    HAS_GRAPHRAG_SDK = False
+    EntityType = Any
+    GraphSchema = Any
+    RelationType = Any
 
 
-def build_bei_schema() -> GraphSchema:
+def build_bei_schema() -> Any:
     """
     Bangun GraphSchema khusus analisis saham BEI.
-
-    Entity types fokus pada domain perbankan + ekonomi makro:
-      Stock, Company, Person, Policy, Event, FinancialMetric, NewsArticle, Sector
     """
+    if not HAS_GRAPHRAG_SDK:
+        return None
     entities = [
         EntityType(
             label="Stock",

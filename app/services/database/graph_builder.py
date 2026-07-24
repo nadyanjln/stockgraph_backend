@@ -20,7 +20,12 @@ from pathlib import Path
 from typing import Iterable
 
 from dotenv import load_dotenv
-from falkordb import FalkorDB
+try:
+    from falkordb import FalkorDB
+    HAS_FALKORDB = True
+except ImportError:
+    HAS_FALKORDB = False
+    FalkorDB = None
 
 from app.core.extractor.relevance_checker import CheckedResult
 from app.core.extractor.entity_validation import is_valid_entity
