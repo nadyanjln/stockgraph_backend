@@ -126,9 +126,20 @@ def create_app() -> FastAPI:
         lifespan=lifespan,
     )
 
+    frontend_url = os.getenv("FRONTEND_URL", "").strip()
+    origins = [
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "http://localhost:8000",
+        "https://stockgraph-nadya.vercel.app",
+    ]
+    if frontend_url and frontend_url not in origins:
+        origins.append(frontend_url)
+
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"],
+        allow_origins=origins,
+        allow_origin_regex=r"https://.*\.vercel\.app",
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
