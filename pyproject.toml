@@ -1,35 +1,27 @@
 [project]
 name = "stockgraph"
 version = "0.1.0"
-description = "Add your description here"
+description = "StockGraph Backend API"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "anthropic>=0.97.0",
     "asyncpg>=0.31.0",
     "bcrypt>=5.0.0",
-    "camelot-py>=1.0.9",
-    "chromadb>=1.5.8",
-    "falkordb>=1.6.1",
     "fastapi>=0.115.0",
     "feedparser>=6.0.12",
-    "datasets>=4.0.0",
     "googlenewsdecoder>=0.1.7",
     "graphrag-sdk[litellm]>=1.0.1",
-    "jinja2>=3.1.4",
     "matplotlib>=3.9.0",
-    "networkx>=3.6.1",
     "openai>=2.33.0",
+    "onnxruntime>=1.18.0",
     "paddleocr>=3.3.0",
-    "paddlepaddle>=3.0.0",
     "pandas>=2.2.0",
     "psycopg2-binary>=2.9.12",
+    "pypdf>=5.9.0",
     "python-dotenv>=1.2.2",
-    "pyvis>=0.3.2",
     "ragas>=0.4.3",
     "requests>=2.33.1",
     "sqlalchemy[asyncio]>=2.0.30",
-    "streamlit>=1.57.0",
     "trafilatura>=2.0.0",
     "uvicorn[standard]>=0.32.0",
     "websockets>=14.0",
@@ -48,21 +40,3 @@ dev = [
 testpaths = ["test"]
 python_files = ["test_*.py"]
 asyncio_mode = "auto"
-addopts = [
-    "--strict-markers",
-    "--ignore=test/test_crawler.py",
-    "--ignore=test/test_extractor.py",
-    "--ignore=test/test_financial.py",
-    "--ignore=test/test_graph.py",
-    "--ignore=test/test_graphrag.py",
-    "--ignore=test/test_relevance.py",
-]
-markers = [
-    "black_box: tests public behavior through an API or UI boundary",
-    "integration: tests cooperation between active components using fakes",
-    "white_box: limited path tests for the two documented critical functions",
-]
-
-[tool.coverage.run]
-branch = true
-source = ["app"]
