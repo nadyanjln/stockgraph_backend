@@ -36,9 +36,11 @@ _settings = get_db_settings()
 async_engine = create_async_engine(
     _settings.async_dsn,
     echo=_settings.echo,
-    pool_size=_settings.pool_size,
-    max_overflow=_settings.max_overflow,
+    pool_size=min(_settings.pool_size, 3),
+    max_overflow=min(_settings.max_overflow, 3),
     pool_pre_ping=True,
+    pool_recycle=300,
+    connect_args={"statement_cache_size": 0},
     future=True,
 )
 
