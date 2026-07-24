@@ -25,17 +25,23 @@ class DatabaseSettings:
     max_overflow: int
 
     @property
+    def clean_host(self) -> str:
+        h = self.host.strip()
+        h = h.replace("http://", "").replace("https://", "")
+        return h.split("/")[0]
+
+    @property
     def async_dsn(self) -> str:
         return (
             f"postgresql+asyncpg://{self.user}:{self.password}"
-            f"@{self.host}:{self.port}/{self.name}"
+            f"@{self.clean_host}:{self.port}/{self.name}"
         )
 
     @property
     def sync_dsn(self) -> str:
         return (
             f"postgresql+psycopg2://{self.user}:{self.password}"
-            f"@{self.host}:{self.port}/{self.name}"
+            f"@{self.clean_host}:{self.port}/{self.name}"
         )
 
 

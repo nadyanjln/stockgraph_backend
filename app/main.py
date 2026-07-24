@@ -79,8 +79,14 @@ async def _setup_engine(app: FastAPI) -> None:
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("starting up — running create_all")
-    await init_db()
-    await _setup_engine(app)
+    try:
+        await init_db()
+    except Exception as exc:
+        logger.warning("DB init_db failed on startup (degraded mode): %s", exc)
+    try:
+        await _setup_engine(app)
+    except Exception as exc:
+        logger.warning("Setup engine failed on startup: %s", exc)
     yield
     logger.info("shutting down — disposing engine")
     engine = getattr(app.state, "engine", None)
