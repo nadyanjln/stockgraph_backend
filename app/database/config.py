@@ -39,10 +39,7 @@ class DatabaseSettings:
 
     @property
     def sync_dsn(self) -> str:
-        return (
-            f"postgresql+psycopg2://{self.user}:{self.password}"
-            f"@{self.clean_host}:{self.port}/{self.name}"
-        )
+        return self.async_dsn
 
 
 @lru_cache(maxsize=1)

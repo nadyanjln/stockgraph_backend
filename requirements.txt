@@ -1,9 +1,7 @@
-# Vercel lightweight production requirements (~110 MB)
 fastapi>=0.115.0
-uvicorn[standard]>=0.32.0
+uvicorn>=0.32.0
 sqlalchemy[asyncio]>=2.0.30
 asyncpg>=0.29.0
-psycopg2-binary>=2.9.9
 pydantic>=2.8.0
 python-dotenv>=1.0.1
 requests>=2.33.1
