@@ -1,0 +1,206 @@
+[
+  {
+    "question": "[BBRI] Berapa laba bersih bank-only BBRI pada Januari 2026 dan bagaimana pertumbuhannya secara tahunan?",
+    "answer": "BBRI mencatat laba bersih bank-only Rp 3,72 triliun pada Januari 2026, meningkat 85,39% secara tahunan.",
+    "ground_truth": "Pada Januari 2026, laba bersih bank-only BBRI sebesar Rp 3,72 triliun dan tumbuh 85,39% secara tahunan.",
+    "contexts": [
+      "Laporan kinerja bank-only BBRI untuk Januari 2026 mencatat laba bersih Rp 3,72 triliun; nilai tersebut 85,39% lebih tinggi dibanding periode yang sama tahun sebelumnya."
+    ]
+  },
+  {
+    "question": "[BBRI] Faktor fundamental apa yang relevan untuk menilai BBRI sebagai bank yang fokus pada segmen mikro?",
+    "answer": "Sebagai bank yang fokus pada segmen mikro, BBRI dinilai melalui pertumbuhan kredit UMKM, pendapatan bunga bersih, kualitas aset, dan biaya pencadangan.",
+    "ground_truth": "Fundamental BBRI sebagai bank berfokus mikro mencakup pertumbuhan kredit UMKM, pendapatan bunga bersih, kualitas aset, dan biaya pencadangan.",
+    "contexts": [
+      "BBRI berfokus pada segmen mikro, kecil, dan menengah; faktor fundamental yang relevan untuk menilainya adalah pertumbuhan kredit UMKM, pendapatan bunga bersih, kualitas aset, dan biaya pencadangan."
+    ]
+  },
+  {
+    "question": "[ASII] Segmen bisnis apa saja yang perlu dilihat ketika membaca fundamental ASII secara konsolidasi?",
+    "answer": "Segmen bisnis yang perlu dilihat dalam fundamental ASII secara konsolidasi adalah otomotif, jasa keuangan, alat berat, pertambangan, agribisnis, infrastruktur, dan teknologi informasi.",
+    "ground_truth": "ASII perlu dinilai secara konsolidasi melalui segmen otomotif, jasa keuangan, alat berat, pertambangan, agribisnis, infrastruktur, dan teknologi informasi.",
+    "contexts": [
+      "Fundamental ASII secara konsolidasi perlu dilihat dari portofolio bisnis otomotif, jasa keuangan, alat berat, pertambangan, agribisnis, infrastruktur, dan teknologi informasi."
+    ]
+  },
+  {
+    "question": "[ASII] Berapa nilai maksimal buyback saham ASII dan batas free float yang perlu diperhatikan?",
+    "answer": "Nilai maksimal buyback saham ASII adalah Rp 2 triliun, sedangkan batas free float yang perlu dipertahankan setelah buyback adalah minimum 7,5%.",
+    "ground_truth": "Buyback saham ASII bernilai maksimal Rp 2 triliun, dengan batas free float setelah buyback tidak kurang dari 7,5%.",
+    "contexts": [
+      "ASII menyiapkan buyback saham dengan jumlah maksimal Rp 2 triliun, dan free float setelah buyback tidak akan menjadi kurang dari 7,5% dari modal ditempatkan dan disetor."
+    ]
+  },
+  {
+    "question": "[MEDC] Saat harga minyak melemah, indikator apa yang perlu dibaca dari MEDC?",
+    "answer": "Saat harga minyak melemah, indikator MEDC yang perlu dibaca adalah harga Brent, harga WTI, dan pendapatan perusahaan pada 2025.",
+    "ground_truth": "Pelemahan minyak pada MEDC dinilai melalui harga Brent, harga WTI, dan pendapatan perusahaan tahun 2025.",
+    "contexts": [
+      "Dampak pelemahan minyak terhadap MEDC dapat dinilai melalui pergerakan harga acuan Brent dan WTI serta pendapatan perusahaan pada 2025."
+    ]
+  },
+  {
+    "question": "[BBCA] Apa tiga indikator utama untuk menilai kinerja BBCA dan apa artinya?",
+    "answer": "Tiga indikator utama kinerja BBCA adalah pendapatan operasional sebagai hasil bisnis inti, laba bersih sebagai ukuran profitabilitas, dan kualitas aset sebagai ukuran risiko kredit.",
+    "ground_truth": "Kinerja BBCA dinilai dari pendapatan operasional sebagai hasil bisnis utama, laba bersih sebagai ukuran profitabilitas, dan kualitas aset sebagai ukuran risiko kredit.",
+    "contexts": [
+      "Tiga indikator utama kinerja BBCA adalah pendapatan operasional, laba bersih, dan kualitas aset. Pendapatan operasional menunjukkan hasil bisnis utama dari bunga dan komisi, laba bersih mengukur profitabilitas setelah biaya dan pencadangan, sedangkan kualitas aset mencerminkan risiko kredit melalui rasio kredit bermasalah."
+    ]
+  },
+  {
+    "question": "[BMRI] Apa tiga indikator utama kinerja BMRI dan apa arti masing-masing indikator?",
+    "answer": "Tiga indikator utama kinerja BMRI adalah pertumbuhan kredit sebagai ukuran ekspansi pembiayaan, CASA sebagai pendukung biaya dana dan margin bunga, serta pencadangan dan kredit bermasalah sebagai ukuran kualitas kredit.",
+    "ground_truth": "Kinerja BMRI dibaca dari pertumbuhan kredit sebagai ekspansi pembiayaan, CASA sebagai pendukung biaya dana dan margin bunga, serta pencadangan dan kredit bermasalah sebagai ukuran kualitas kredit.",
+    "contexts": [
+      "Tiga indikator utama kinerja BMRI adalah pertumbuhan kredit, CASA, dan kualitas kredit. Pertumbuhan kredit menunjukkan ekspansi pembiayaan, CASA menunjukkan dukungan dana murah terhadap biaya dana dan margin bunga, sedangkan pencadangan serta kredit bermasalah menunjukkan kualitas kredit."
+    ]
+  },
+  {
+    "question": "[BBNI] Jika laba BBNI naik, faktor apa saja yang perlu dicek agar kenaikannya dianggap sehat?",
+    "answer": "Kenaikan laba BBNI dianggap sehat jika didukung pertumbuhan kredit berkualitas dan pendapatan bunga, efisiensi biaya operasional, serta kualitas aset yang terjaga dan bukan hanya pencadangan yang lebih rendah.",
+    "ground_truth": "Kesehatan kenaikan laba BBNI dinilai dari pertumbuhan kredit dan pendapatan bunga, efisiensi operasional, serta kualitas aset yang terjaga tanpa bergantung pada penurunan pencadangan.",
+    "contexts": [
+      "Kenaikan laba BBNI memperoleh dukungan yang sehat ketika pertumbuhan kredit kepada debitur berkualitas meningkatkan pendapatan bunga.",
+      "Efisiensi biaya operasional mendukung kenaikan laba BBNI karena pendapatan yang sama dapat menghasilkan keuntungan lebih besar.",
+      "Kenaikan laba BBNI dinilai sehat apabila kualitas aset tetap terjaga dan kenaikan tersebut tidak hanya berasal dari beban pencadangan yang lebih rendah."
+    ]
+  },
+  {
+    "question": "[BBTN] Mengapa perubahan suku bunga penting untuk membaca prospek BBTN?",
+    "answer": "Perubahan suku bunga penting bagi BBTN karena bisnisnya banyak terkait kredit pemilikan rumah. Suku bunga memengaruhi permintaan KPR, biaya dana, margin bunga, dan kemampuan debitur membayar cicilan.",
+    "ground_truth": "Prospek BBTN sensitif terhadap suku bunga karena dampaknya pada permintaan KPR, biaya dana, margin bunga, dan kemampuan debitur membayar cicilan.",
+    "contexts": [
+      "BBTN memiliki eksposur besar pada kredit pemilikan rumah sehingga permintaan kredit dapat berubah mengikuti tingkat suku bunga.",
+      "Kenaikan suku bunga dapat menaikkan biaya dana BBTN dan menekan margin bunga bersih apabila bunga kredit tidak dapat disesuaikan dengan cepat.",
+      "Kemampuan debitur BBTN membayar cicilan KPR menjadi perhatian karena cicilan yang lebih mahal dapat meningkatkan risiko kualitas kredit."
+    ]
+  },
+  {
+    "question": "[TLKM] Apa tiga risiko utama bisnis TLKM dan bagaimana dampaknya?",
+    "answer": "Tiga risiko utama bisnis TLKM beserta dampaknya adalah persaingan harga yang menekan pendapatan per pengguna, belanja modal jaringan yang membutuhkan biaya besar, dan peralihan dari suara ke data yang menuntut monetisasi digital.",
+    "ground_truth": "TLKM menghadapi risiko persaingan harga yang menekan pendapatan per pengguna, investasi jaringan yang besar, serta peralihan konsumsi suara ke data yang menuntut monetisasi digital.",
+    "contexts": [
+      "Tiga risiko utama bisnis TLKM adalah persaingan harga, belanja modal jaringan, dan peralihan konsumsi dari suara ke data. Persaingan dapat menekan pendapatan per pengguna, investasi jaringan membutuhkan biaya besar, sedangkan peralihan ke data membuat pertumbuhan bergantung pada monetisasi layanan digital."
+    ]
+  },
+  {
+    "question": "[ICBP] Bagaimana biaya bahan baku, kekuatan merek, dan distribusi memengaruhi margin ICBP?",
+    "answer": "Biaya bahan baku dan produksi memengaruhi beban ICBP, kekuatan merek mendukung penyesuaian harga, dan distribusi menjaga volume serta efisiensi; ketiga faktor tersebut memengaruhi margin ICBP.",
+    "ground_truth": "ICBP menjaga margin melalui pengendalian biaya bahan baku dan produksi, daya merek untuk menyesuaikan harga, serta jaringan distribusi yang menopang penjualan dan efisiensi.",
+    "contexts": [
+      "Margin ICBP ditentukan oleh tiga kelompok faktor. Biaya gandum, minyak, kemasan, dan produksi memengaruhi beban usaha; kekuatan merek mendukung penyesuaian harga tanpa langsung kehilangan permintaan; sedangkan jaringan distribusi membantu menjaga volume penjualan dan efisiensi pemasaran serta logistik."
+    ]
+  },
+  {
+    "question": "[INDF, ICBP] Apa perbedaan utama diversifikasi bisnis INDF dan ICBP?",
+    "answer": "Perbedaan utama diversifikasi bisnis INDF dan ICBP adalah INDF mencakup produk konsumen, bogasari, agribisnis, dan distribusi, sedangkan ICBP berfokus pada produk konsumen bermerek.",
+    "ground_truth": "Portofolio INDF mencakup produk konsumen, bogasari, agribisnis, dan distribusi, sementara kegiatan ICBP berfokus pada produk konsumen bermerek.",
+    "contexts": [
+      "Perbedaan diversifikasi INDF dan ICBP terlihat dari cakupan segmennya. INDF memiliki produk konsumen bermerek, bogasari, agribisnis, dan distribusi, sedangkan ICBP lebih terkonsentrasi pada produk konsumen bermerek seperti makanan olahan dan minuman."
+    ]
+  },
+  {
+    "question": "[PTBA] Bagaimana harga jual, volume penjualan, dan biaya produksi memengaruhi pendapatan serta margin PTBA?",
+    "answer": "Harga jual dan volume penjualan batu bara menentukan pendapatan PTBA, sedangkan biaya produksi memengaruhi margin perusahaan.",
+    "ground_truth": "Pendapatan PTBA dibentuk oleh harga dan volume penjualan batu bara, sementara margin bergantung pada biaya produksinya.",
+    "contexts": [
+      "Kinerja PTBA berkaitan langsung dengan harga jual, volume penjualan, dan biaya produksi batu bara. Harga jual rata-rata bersama volume menentukan pendapatan, sedangkan selisih antara penerimaan penjualan dan biaya produksi memengaruhi margin perusahaan."
+    ]
+  },
+  {
+    "question": "[ANTM] Mengapa hilirisasi penting dan faktor apa yang menentukan keberhasilannya bagi ANTM?",
+    "answer": "Hilirisasi penting karena pengolahan mineral dapat meningkatkan nilai tambah ANTM, sedangkan keberhasilannya ditentukan kapasitas produksi, harga komoditas, belanja modal, dan kelancaran proyek pengolahan.",
+    "ground_truth": "Nilai tambah mineral ANTM dapat meningkat melalui hilirisasi, tetapi hasilnya bergantung pada kapasitas, harga komoditas, kebutuhan investasi, dan pelaksanaan proyek.",
+    "contexts": [
+      "Hilirisasi ANTM bertujuan meningkatkan nilai tambah mineral dengan mengolah komoditas sebelum dijual. Keberhasilan strategi tersebut dipengaruhi kapasitas produksi, harga komoditas, kebutuhan belanja modal, dan kelancaran pembangunan serta operasi proyek pengolahan."
+    ]
+  },
+  {
+    "question": "[GOTO] Indikator apa yang menunjukkan kemajuan GOTO menuju profitabilitas?",
+    "answer": "Kemajuan GOTO menuju profitabilitas ditunjukkan oleh pertumbuhan pendapatan yang berkelanjutan, biaya insentif yang lebih efisien, rugi bersih yang menyempit, dan margin kontribusi yang membaik.",
+    "ground_truth": "Indikator perbaikan profitabilitas GOTO adalah pertumbuhan pendapatan, efisiensi insentif, penurunan rugi bersih, dan peningkatan margin kontribusi.",
+    "contexts": [
+      "Empat indikator menunjukkan kemajuan GOTO menuju profitabilitas. Pendapatan perlu tumbuh secara berkelanjutan, biaya insentif harus semakin efisien, rugi bersih perlu menyempit, dan margin kontribusi harus meningkat."
+    ]
+  },
+  {
+    "question": "[CPIN] Kapan kenaikan biaya bahan baku mulai menekan margin CPIN?",
+    "answer": "Kenaikan biaya bahan baku mulai menekan margin CPIN ketika biaya pakan yang lebih tinggi tidak dapat diimbangi melalui harga jual ayam dan produk unggas.",
+    "ground_truth": "Margin CPIN tertekan apabila kenaikan biaya bahan baku pakan tidak dapat diimbangi melalui harga jual produk unggas.",
+    "contexts": [
+      "Biaya pakan CPIN dipengaruhi harga bahan baku seperti jagung dan bungkil kedelai. Kenaikan biaya tersebut menekan margin apabila perusahaan tidak dapat meneruskannya ke harga jual ayam dan produk unggas."
+    ]
+  },
+  {
+    "question": "[SIDO] Apa yang menentukan keberlanjutan dividen SIDO?",
+    "answer": "Keberlanjutan dividen SIDO ditentukan laba bersih dan kebijakan payout, dukungan arus kas operasi, serta kebutuhan kas untuk belanja modal.",
+    "ground_truth": "Dividen SIDO berkelanjutan apabila pembagian laba didukung kas operasi setelah kebutuhan investasi perusahaan diperhitungkan.",
+    "contexts": [
+      "Keberlanjutan dividen SIDO dinilai dari laba bersih, kebijakan payout, arus kas operasi, dan belanja modal. Laba dan payout menentukan jumlah yang dibagikan, arus kas operasi menyediakan dukungan kas, sedangkan belanja modal menunjukkan dana yang harus dipertahankan untuk investasi."
+    ]
+  },
+  {
+    "question": "[SMGR] Bagaimana kelebihan kapasitas industri semen memengaruhi kinerja SMGR?",
+    "answer": "Kelebihan kapasitas industri semen menekan kinerja SMGR dengan menurunkan utilisasi dan efisiensi biaya serta memperketat persaingan yang menekan harga jual dan margin.",
+    "ground_truth": "Kapasitas industri yang berlebih menekan utilisasi, efisiensi biaya, harga jual, dan margin SMGR melalui persaingan yang lebih ketat.",
+    "contexts": [
+      "Kelebihan kapasitas industri semen memengaruhi SMGR melalui utilisasi dan persaingan. Kapasitas yang tidak terpakai menekan efisiensi biaya produksi per unit, sedangkan persaingan harga yang lebih ketat dapat menurunkan harga jual dan margin."
+    ]
+  },
+  {
+    "question": "[PGAS] Bagaimana volume distribusi dan selisih harga menentukan kinerja PGAS?",
+    "answer": "Volume distribusi memengaruhi kinerja PGAS melalui aktivitas penjualan, sedangkan selisih harga pasokan kontrak dan harga jual menentukan margin niaga.",
+    "ground_truth": "Penjualan PGAS bergantung pada volume distribusi gas, sementara margin niaganya berasal dari perbedaan harga beli kontrak dan harga jual.",
+    "contexts": [
+      "Dua indikator utama kinerja PGAS adalah volume distribusi dan margin niaga. Volume gas yang disalurkan menentukan aktivitas penjualan, sedangkan margin niaga ditentukan oleh selisih harga pasokan dalam kontrak dengan harga jual kepada pelanggan."
+    ]
+  },
+  {
+    "question": "[JSMR] Bagaimana volume kendaraan, tarif tol, dan beban bunga memengaruhi pendapatan serta laba JSMR?",
+    "answer": "Volume kendaraan dan tarif tol memengaruhi pendapatan JSMR, sedangkan beban bunga atas pendanaan proyek jalan tol memengaruhi laba bersih perusahaan.",
+    "ground_truth": "Pendapatan JSMR berasal dari lalu lintas dan tarif tol, sementara laba bersihnya dipengaruhi bunga atas utang proyek jalan tol.",
+    "contexts": [
+      "Kinerja JSMR dipengaruhi volume lalu lintas, tarif tol, dan beban bunga. Volume kendaraan bersama tarif menentukan pendapatan tol, sedangkan beban bunga atas utang pembangunan jalan memengaruhi laba bersih perusahaan."
+    ]
+  },
+  {
+    "question": "[KLBF] Mengapa KLBF dianggap defensif dan faktor apa yang tetap dapat menekan marginnya?",
+    "answer": "KLBF dianggap defensif karena permintaan produk kesehatan relatif stabil, sedangkan marginnya tetap dipengaruhi harga bahan baku, pergerakan kurs, dan kemampuan menyesuaikan harga jual.",
+    "ground_truth": "Stabilitas permintaan kesehatan mendukung karakter defensif KLBF, sementara biaya bahan baku, nilai tukar, dan kemampuan menaikkan harga memengaruhi margin.",
+    "contexts": [
+      "Karakter defensif KLBF berasal dari bisnis farmasi, produk kesehatan, distribusi, dan nutrisi yang melayani kebutuhan dengan permintaan relatif stabil. Meskipun demikian, margin perusahaan tetap dipengaruhi harga bahan baku, pergerakan kurs, dan kemampuan menyesuaikan harga jual."
+    ]
+  },
+  {
+    "question": "[BRIS] Apa yang membedakan analisis fundamental BRIS dari bank konvensional?",
+    "answer": "Perbedaan analisis fundamental BRIS dari bank konvensional terletak pada pembiayaan dan pendanaan berbasis syariah, kualitas pembiayaan, serta permintaan layanan dari ekosistem halal.",
+    "ground_truth": "Fundamental BRIS dinilai melalui pembiayaan dan pendanaan syariah, pengelolaan kualitas pembiayaan, dan perkembangan permintaan dalam ekosistem halal.",
+    "contexts": [
+      "Fundamental BRIS berbeda dari bank konvensional karena penyaluran pembiayaan dan penghimpunan dana dilakukan melalui produk berbasis syariah. Penilaiannya juga mencakup kualitas pembiayaan yang memengaruhi pencadangan serta pertumbuhan ekosistem halal yang mendorong permintaan layanan."
+    ]
+  },
+  {
+    "question": "[UNVR] Bagaimana persaingan merek memengaruhi margin dan pangsa pasar UNVR?",
+    "answer": "Persaingan dan promosi harga dapat menekan margin UNVR, sedangkan kekuatan merek, inovasi, dan distribusi membantu mempertahankan pangsa pasar.",
+    "ground_truth": "Persaingan harga menekan margin UNVR, sementara merek, inovasi, dan jangkauan distribusi menopang pangsa pasar perusahaan.",
+    "contexts": [
+      "UNVR menghadapi persaingan merek lokal dan global pada produk konsumsi harian. Promosi harga untuk mempertahankan volume dapat menekan margin, sedangkan kekuatan merek, inovasi produk, dan distribusi yang luas membantu menjaga pangsa pasar serta loyalitas konsumen."
+    ]
+  },
+  {
+    "question": "[MDKA] Bagaimana produksi, harga mineral, belanja modal, dan perkembangan proyek memengaruhi prospek MDKA?",
+    "answer": "Produksi dan harga mineral memengaruhi prospek MDKA melalui pendapatan, sedangkan belanja modal membutuhkan kas dan keterlambatan proyek dapat menunda tambahan kapasitas serta arus kas.",
+    "ground_truth": "Prospek MDKA bergantung pada produksi dan harga sebagai pendorong pendapatan, sementara belanja modal dan pelaksanaan proyek memengaruhi kebutuhan kas, kapasitas, dan arus kas.",
+    "contexts": [
+      "Prospek MDKA dipengaruhi kinerja operasi dan pengembangan proyek. Volume produksi bersama harga jual mineral menentukan pendapatan, sementara belanja modal membutuhkan kas sebelum proyek menghasilkan; keterlambatan konstruksi atau produksi juga dapat menunda tambahan kapasitas dan arus kas."
+    ]
+  },
+  {
+    "question": "[TPIA] Bagaimana spread petrokimia, permintaan industri, dan utilisasi pabrik memengaruhi risiko TPIA?",
+    "answer": "Spread petrokimia memengaruhi risiko TPIA ketika kenaikan naphtha mempersempit margin, permintaan industri memengaruhi penjualan, dan utilisasi pabrik yang rendah meningkatkan biaya tetap per unit.",
+    "ground_truth": "TPIA menghadapi risiko penyempitan margin akibat bahan baku, perubahan penjualan akibat permintaan industri, dan kenaikan biaya per unit ketika utilisasi rendah.",
+    "contexts": [
+      "Risiko TPIA berasal dari spread, permintaan, dan utilisasi. Kenaikan harga naphtha yang tidak diikuti harga jual mempersempit spread serta margin, perubahan permintaan industri memengaruhi penjualan, dan utilisasi pabrik yang rendah meningkatkan biaya tetap per unit."
+    ]
+  }
+]
