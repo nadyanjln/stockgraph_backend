@@ -14,7 +14,6 @@ dependencies = [
     "matplotlib>=3.9.0",
     "openai>=2.33.0",
     "onnxruntime>=1.18.0",
-    "paddleocr>=3.3.0",
     "pandas>=2.2.0",
     "psycopg2-binary>=2.9.12",
     "pypdf>=5.9.0",
